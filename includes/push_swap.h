@@ -6,7 +6,7 @@
 /*   By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:18:28 by bkrasnos          #+#    #+#             */
-/*   Updated: 2022/06/02 16:17:03 by bkrasnos         ###   ########.fr       */
+/*   Updated: 2022/06/02 17:19:22 by bkrasnos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,36 +17,32 @@
 # include <stdlib.h>
 # include <fcntl.h>
 # include "../libft/libft.h"
+# include "../ft_printf/includes/ft_printf.h"
+# include "../get_next_line/get_next_line.h"
 
-typedef struct	s_stack
+typedef struct s_data
 {
-	long int	num;
-	struct s_stack	*next;
-	struct s_stack	*prev;
-}	t_stack;
+	int				max_a;
+	int				max_b;
+	int				flags_a;
+	int				flags_b;
+	int				pos_a;
+	int				pos_b;
+}	t_data;
 
-typedef struct	s_frame
+typedef struct s_info
 {
-	struct s_stack	*a;
-	struct s_stack	*b;
-	char	**argv;
-	char	*line;
-	char	*str;
-	int		print;
-	int		write;
-	int		length_stack;
-	int		big_rotate;
-	int		big_rrotate;
-	int		big_flag;
-	int		small_rotate;
-	int		small_rrotate;
-	int		small_flag;
-	int		rotate;
-	long	quarter;
-	long	median;
-	long	three_quarters;
-	long	biggest;
-	long	smallest;
-}	t_frame;
+	int				pivot;
+	int				size_b;
+	int				size_a;
+	int				flags;
+	int				vis;
+}	t_info;
+
+typedef struct s_list
+{
+	int				content;
+	struct s_list	*next;
+}	t_list;
 
 #endif
