@@ -6,7 +6,7 @@
 /*   By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 17:26:37 by bkrasnos          #+#    #+#             */
-/*   Updated: 2022/06/02 17:31:34 by bkrasnos         ###   ########.fr       */
+/*   Updated: 2022/06/06 11:42:41 by bkrasnos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ void	pa(t_list **list_a, t_list **list_b, int p)
 	if (p == 2)
 	{
 		ft_putstr("\x1b[36mExecute pa:\n\n");
-		visualizer(*list_a, *list_b);
 	}
 }
 
@@ -46,6 +45,5 @@ void	pb(t_list **list_a, t_list **list_b, int p)
 	if (p == 2)
 	{
 		ft_putstr("\x1b[36mExecute pb:\n\n");
-		visualizer(*list_a, *list_b);
 	}
 }
