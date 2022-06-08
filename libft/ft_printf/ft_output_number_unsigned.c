@@ -6,7 +6,7 @@
 /*   By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 13:34:33 by bkrasnos          #+#    #+#             */
-/*   Updated: 2022/04/22 13:42:32 by bkrasnos         ###   ########.fr       */
+/*   Updated: 2022/06/08 09:15:34 by bkrasnos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static void	ft_putnbr_unsigned(unsigned int nb, int *a)
 		nb = nb % 10;
 	}
 	if (nb < 10)
-		ft_putchar(nb + '0', a);
+		ft_putcharr(nb + '0', a);
 }
 
 void	ft_output_number_unsigned(t_print *tab, unsigned int nbr, int *a)
@@ -60,12 +60,12 @@ void	ft_output_number_unsigned(t_print *tab, unsigned int nbr, int *a)
 	if (tab->dot > 0)
 		tab->width = tab->width - tab->dot;
 	while (!tab->zero && !tab->minus && ft_shrink(&tab->width))
-		ft_putchar(' ', a);
+		ft_putcharr(' ', a);
 	while ((tab->zero && ft_shrink(&tab->width))
 		|| ft_shrink(&tab->dot))
-		ft_putchar('0', a);
+		ft_putcharr('0', a);
 	if (len)
 		ft_putnbr_unsigned(nbr, a);
 	while (tab->minus && (tab->dot <= 0) && ft_shrink(&tab->width))
-		ft_putchar(' ', a);
+		ft_putcharr(' ', a);
 }

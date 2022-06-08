@@ -6,7 +6,7 @@
 /*   By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 13:34:47 by bkrasnos          #+#    #+#             */
-/*   Updated: 2022/04/22 15:12:05 by bkrasnos         ###   ########.fr       */
+/*   Updated: 2022/06/08 09:14:05 by bkrasnos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,16 @@ void	ft_output_string(t_print *tab, char *str, int *a)
 	else
 		tab->width -= ft_strlen(str);
 	while (tab->zero && ft_shrink(&tab->width))
-		ft_putchar('0', a);
+		ft_putcharr('0', a);
 	while (!tab->zero && !tab->minus && ft_shrink(&tab->width))
-		ft_putchar(' ', a);
+		ft_putcharr(' ', a);
 	while (*str != '\0')
 	{
 		if (tab->dot >= 0 && !(ft_shrink(&tab->dot)))
 			break ;
-		ft_putchar(*str, a);
+		ft_putcharr(*str, a);
 		++str;
 	}
 	while (tab->minus && ft_shrink(&tab->width))
-		ft_putchar(' ', a);
+		ft_putcharr(' ', a);
 }

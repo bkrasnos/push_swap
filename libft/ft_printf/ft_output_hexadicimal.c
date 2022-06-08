@@ -6,7 +6,7 @@
 /*   By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 13:34:18 by bkrasnos          #+#    #+#             */
-/*   Updated: 2022/04/22 13:42:25 by bkrasnos         ###   ########.fr       */
+/*   Updated: 2022/06/08 09:15:56 by bkrasnos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,9 @@ static void	ft_putnbr_unsigned(unsigned int nb, int *a)
 		nb = nb % 16;
 	}
 	if (nb < 10)
-		ft_putchar(nb + '0', a);
+		ft_putcharr(nb + '0', a);
 	else
-		ft_putchar(nb + 87, a);
+		ft_putcharr(nb + 87, a);
 }
 
 void	ft_output_hexadicimal(t_print *tab, unsigned int nbr, int *a)
@@ -63,17 +63,17 @@ void	ft_output_hexadicimal(t_print *tab, unsigned int nbr, int *a)
 		tab->width -= 2;
 	while (tab->width > tab->dot && !tab->zero
 		&& !tab->minus && ft_shrink(&tab->width))
-		ft_putchar(' ', a);
+		ft_putcharr(' ', a);
 	if (tab->sharp && nbr)
-		ft_putstr("0x", a);
+		ft_putstrr("0x", a);
 	while ((tab->zero && tab->width > 0) || tab->dot > 0)
 	{
-		ft_putchar('0', a);
+		ft_putcharr('0', a);
 		--tab->width;
 		--tab->dot;
 	}	
 	if (len)
 		ft_putnbr_unsigned(nbr, a);
 	while (tab->minus && ft_shrink(&tab->width))
-		ft_putchar(' ', a);
+		ft_putcharr(' ', a);
 }
