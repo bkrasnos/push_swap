@@ -6,7 +6,7 @@
 #    By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/27 12:40:35 by bkrasnos          #+#    #+#              #
-#    Updated: 2022/06/02 16:57:58 by bkrasnos         ###   ########.fr        #
+#    Updated: 2022/06/06 15:38:44 by bkrasnos         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,18 +19,40 @@ CFLAGS = -Wall -Wextra -Werror -g
 
 LIB = ./libft/libft.a
 LIB_PATH = ./libft
-INCLUDES = -I libft/libft.h ft_printf/includes get_next_line/get_next_line.h -I ./includes
+INCLUDES = -I libft get_next_line -I ./includes
 SRC_PATH = ./srcs
 OBJ_PATH = ./objs
-SRC_CHECKER =	checker.c\
+SRC_CHECKER =	checker.c		\
+				lst.c			\
+				create_list.c	\
+				push.c			\
+				reverse_rotate.c\
+				rotate.c		\
+				swap.c			\
+				utilities.c		\
 						
-SRC_PUSH_SWAP = push_swap.c
+SRC_PUSH_SWAP = push_swap.c		\
+				solution.c		\
+				fast_solution.c	\
+				lst.c			\
+				create_list.c	\
+				push.c			\
+				middle.c		\
+				reverse_rotate.c\
+				rotate.c		\
+				swap.c			\
+				utilities.c		\
 							
 OBJ_CHECKER = $(SRC_CHECKER:.c=.o)
+
 OBJ_PUSH_SWAP = $(SRC_PUSH_SWAP:.c=.o)
+
 SRC = $(addprefix $(SRC_PATH)/, $(SRC_CHECKER))
+
 SRC2 = $(addprefix $(SRC_PATH)/, $(SRC_PUSH_SWAP))
+
 OBJ = $(addprefix $(OBJ_PATH)/, $(OBJ_CHECKER))
+
 OBJ2 = $(addprefix $(OBJ_PATH)/, $(OBJ_PUSH_SWAP))
 
 all: $(CHECKER) $(PUSH_SWAP)

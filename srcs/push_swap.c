@@ -6,7 +6,7 @@
 /*   By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 11:38:54 by bkrasnos          #+#    #+#             */
-/*   Updated: 2022/06/06 11:44:28 by bkrasnos         ###   ########.fr       */
+/*   Updated: 2022/06/06 15:12:11 by bkrasnos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@ static int	find_algorithm(t_list **list_a, t_info *info)
 {
 	if (find_size(*list_a) > 8)
 	{
-		if (!(resolve(list_a, info)))
+		if (!(solution(list_a, info)))
 			return (0);
 	}
 	else
-		short_resolve(list_a, info);
-	if (info->vis == 2)
+		fast_solution(list_a, info);
+	if (info->print == 2)
 	{
 		ft_printf("\x1b[36mSort stack : \n\n");
 	}
@@ -38,14 +38,14 @@ int	main(int ac, char **av)
 	info = malloc(sizeof(t_info));
 	if (!info)
 		return (0);
-	info->vis = 1;
+	info->print = 1;
 	list_a = create_list(ac, av, &info);
 	if (!list_a)
 	{
 		free(info);
 		return (write(2, "Error\n", 6));
 	}
-	if (info->vis == 2)
+	if (info->print == 2)
 	{
 		ft_printf("\x1b[36m\nStart Stack : \n\n");
 	}

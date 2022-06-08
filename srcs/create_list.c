@@ -6,7 +6,7 @@
 /*   By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 11:34:24 by bkrasnos          #+#    #+#             */
-/*   Updated: 2022/06/06 13:04:18 by bkrasnos         ###   ########.fr       */
+/*   Updated: 2022/06/06 15:30:08 by bkrasnos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ static t_list	*fill_list(t_info *info, t_list *list, int ac, char **av)
 	int	i;
 	int	j;
 
-	if (info->vis == 2)
+	if (info->print == 2)
 		i = 2;
 	else
 		i = 1;
@@ -96,7 +96,7 @@ t_list	*create_list(int ac, char **av, t_info **info)
 	list = NULL;
 	if (av[i][0] == '-' && av[i][1] == 'v')
 	{
-		(*info)->vis = 2;
+		(*info)->print = 2;
 		i++;
 	}
 	while (i < ac)
