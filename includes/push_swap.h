@@ -6,61 +6,47 @@
 /*   By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 13:18:28 by bkrasnos          #+#    #+#             */
-/*   Updated: 2022/06/07 12:45:11 by bkrasnos         ###   ########.fr       */
+/*   Updated: 2022/06/09 13:27:21 by bkrasnos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "../libft/includes/libft.h"
+# include "../libft/libft.h"
 
 typedef struct s_data
 {
-	int	max_a;
-	int	max_b;
-	int	flags_a;
-	int	flags_b;
-	int	pos_a;
-	int	pos_b;
+	int		*stack;
+	int		sep;
+	int		len;
+	char	*moves;
 }	t_data;
 
-typedef struct s_info
-{
-	int	size_b;
-	int	size_a;
-	int	flags;
-	int	print;
-}	t_info;
+void	push_swap(t_data *main_data);
+void	small_push_swap(t_data *main_data);
+int		check_argv(char **av, int ac);
+void	data_free(char **data, int state);
+int		check_atoi(char **data);
+t_data	*main_init(char **av, int ac);
+int		check_atoi(char **data);
+int		check_stack_double(char **data);
+void	stop_error(void);
+void	stack_free(t_data *main_data, int state);
+void	get_min(t_data *main_data, int index, int *new_stack);
+void	get_max(t_data *main_data, int	*new_stack);
+void	stack_index(t_data *main_data);
+int		check_two_arg(char *str);
+int		is_sorted(t_data *main_data);
+void	move_ra(t_data *main_data);
+void	move_rra(t_data *main_data);
+void	move_pb(t_data *main_data);
+void	move_pa(t_data *main_data);
+void	move_sa(t_data *main_data);
+void	small_four(t_data *main_data);
+void	small_five(t_data *main_data);
+void	swap_stack(t_data *main_data);
 
-typedef struct s_list
-{
-	int	content;
-	struct s_list	*next;
-}	t_list;
-
-int		solution(t_list **list_a, t_info *info);
-int		free_all(t_list *list, t_info *info);
-void	fast_solution(t_list **list_a, t_info *info);
-int		find_min(t_list *list);
-int		find_max(t_list *list, int skip);
-int		find_pos(int n, t_list *list);
-int		find_size(t_list *list);
-void	free_list(t_list *list);
-void	sa(t_list *list_a, t_list *list_b, int p);
-void	sb(t_list *list_a, t_list *list_b, int p);
-void	ss(t_list *list_a, t_list *list_b, int p);
-void	pa(t_list **list_a, t_list **list_b, int p);
-void	pb(t_list **list_a, t_list **list_b, int p);
-void	ra(t_list **list_a, t_list **list_b, int p);
-void	rb(t_list **list_a, t_list **list_b, int p);
-void	rr(t_list **list_a, t_list **list_b, int p);
-void	rra(t_list **list_a, t_list **list_b, int p);
-void	rrb(t_list **list_a, t_list **list_b, int p);
-void	rrr(t_list **list_a, t_list **list_b, int p);
-void	print_list(t_list *list);
-int		middle(t_list *list_b, int size);
-void	add_link(t_list **list, int n);
-t_list	*create_list(int ac, char **av, t_info **info);
+void	display_stack(t_data *main_data, int start, int end);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 11:42:02 by bkrasnos          #+#    #+#             */
-/*   Updated: 2022/06/01 12:28:32 by bkrasnos         ###   ########.fr       */
+/*   Updated: 2022/04/14 11:35:00 by bkrasnos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,3 +18,22 @@ int	ft_toupper(int c)
 		c -= 32;
 	return (c);
 }
+
+// int	main(void)
+// {
+// 	int		c;
+
+// 	c = 'a';
+// 	printf("c was '%c' and now is '%c'\n", c, ft_toupper(c));
+// 	c = 'A';
+// 	printf("c was '%c' and now is '%c'\n", c, ft_toupper(c));
+// 	c = '0';
+// 	printf("c was '%c' and now is '%c'\n", c, ft_toupper(c));
+// 	c = ' ';
+// 	printf("c was '%c' and now is '%c'\n", c, ft_toupper(c));
+// 	c = 'z';
+// 	printf("c was '%c' and now is '%c'\n", c, ft_toupper(c));
+// 	c = '@';
+// 	printf("c was '%c' and now is '%c'\n", c, ft_toupper(c));
+// 	return (0);
+// }

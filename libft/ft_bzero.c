@@ -6,7 +6,7 @@
 /*   By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 13:34:37 by bkrasnos          #+#    #+#             */
-/*   Updated: 2022/06/02 14:55:27 by bkrasnos         ###   ########.fr       */
+/*   Updated: 2022/04/13 14:02:26 by bkrasnos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,21 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	char	*str;
+	size_t	i;
 
-	str = s;
-	while (n--)
-		*str++ = '\0';
+	i = 0;
+	while (i < n)
+	{
+		*(char *)(s + i) = 0;
+		i++;
+	}
 }
+
+// int	main(void)
+// {
+// 	char	str[] = "hello world";
+
+// 	ft_bzero(str, 5);
+// 	printf("new str is %s\n", str);
+// 	return (0);
+// }

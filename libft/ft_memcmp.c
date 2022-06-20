@@ -6,7 +6,7 @@
 /*   By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 11:36:15 by bkrasnos          #+#    #+#             */
-/*   Updated: 2022/06/02 15:03:54 by bkrasnos         ###   ########.fr       */
+/*   Updated: 2022/04/15 10:09:40 by bkrasnos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,29 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	const unsigned char	*cs1;
-	const unsigned char	*cs2;
+	size_t		idx;
 
-	cs1 = s1;
-	cs2 = s2;
-	while (n--)
+	idx = 0;
+	while (idx < n)
 	{
-		if (*cs1 != *cs2)
-			return (*cs1 - *cs2);
-		cs1++;
-		cs2++;
+		if (*((unsigned char *)s1 + idx)
+			== *((unsigned char *)s2 + idx))
+			idx++;
+		else
+			return ((*((unsigned char *)s1 + idx))
+				- *((unsigned char *)s2 + idx));
 	}
 	return (0);
 }
+
+// int	main(void)
+// {
+// 	const char	buffer1[] = "t\200a";
+// 	const char	buffer2[] = "t\0a";
+// 	const char	buffer3[] = "t\200a";
+// 	const char	buffer4[] = "t\0a";
+
+// 	printf("ret(ft) is %d\n", ft_memcmp(buffer1, buffer2, 3));
+// 	printf("ret(or) is %d\n", memcmp(buffer3, buffer4, 3));
+// 	return (0);
+// }

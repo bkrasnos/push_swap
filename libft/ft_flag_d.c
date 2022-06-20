@@ -1,0 +1,40 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_flag_d.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/20 09:45:49 by bkrasnos          #+#    #+#             */
+/*   Updated: 2022/06/20 11:42:22 by bkrasnos         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+static void	ft_putnbr(long int n, int *nb)
+{
+	unsigned int	t;
+	char			c;
+
+	if (n < 0)
+	{
+		t = -n;
+		*nb = *nb + write(1, "-", 1);
+	}
+	else
+		t = n;
+	if (t > 9)
+		ft_putnbr(t / 10, nb);
+	t %= 10;
+	c = t + '0';
+	*nb = *nb + write(1, &c, 1);
+}
+
+void	ft_flag_d(va_list args, int *nb)
+{
+	long int	n;
+
+	n = va_arg(args, int);
+	ft_putnbr(n, nb);
+}

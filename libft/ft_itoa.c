@@ -6,7 +6,7 @@
 /*   By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 11:35:42 by bkrasnos          #+#    #+#             */
-/*   Updated: 2022/06/02 14:28:14 by bkrasnos         ###   ########.fr       */
+/*   Updated: 2022/04/15 09:56:52 by bkrasnos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,3 +65,28 @@ char	*ft_itoa(int n)
 	str[i] = '\0';
 	return (str);
 }
+
+// int	main(void)
+// {
+// 	int	n;
+
+// 	n = 0;
+// 	printf("n is %d, itoa is %s\n", n, ft_itoa(n));
+// 	n = 1;
+// 	printf("n is %d, itoa is %s\n", n, ft_itoa(n));
+// 	n = 1592;
+// 	printf("n is %d, itoa is %s\n", n, ft_itoa(n));
+// 	n = 100;
+// 	printf("n is %d, itoa is %s\n", n, ft_itoa(n));
+// 	n = 2147483647;
+// 	printf("n is %d, itoa is %s\n", n, ft_itoa(n));
+// 	n = -1;
+// 	printf("n is %d, itoa is %s\n", n, ft_itoa(n));
+// 	n = -2000;
+// 	printf("n is %d, itoa is %s\n", n, ft_itoa(n));
+// 	n = -123;
+// 	printf("n is %d, itoa is %s\n", n, ft_itoa(n));
+// 	n = -2147483648;
+// 	printf("n is %d, itoa is %s\n", n, ft_itoa(n));
+// 	return (0);
+// }

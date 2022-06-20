@@ -6,7 +6,7 @@
 /*   By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 12:10:14 by bkrasnos          #+#    #+#             */
-/*   Updated: 2022/06/02 10:18:41 by bkrasnos         ###   ########.fr       */
+/*   Updated: 2022/04/13 17:03:36 by bkrasnos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,3 +21,9 @@ size_t	ft_strlen(const char *str)
 		i++;
 	return (i);
 }
+
+// int	main(void)
+// {
+// 	printf("The length is %ld\n", strlen(NULL));
+// 	return (0);
+// }

@@ -6,7 +6,7 @@
 /*   By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 11:39:21 by bkrasnos          #+#    #+#             */
-/*   Updated: 2022/06/02 10:19:53 by bkrasnos         ###   ########.fr       */
+/*   Updated: 2022/04/15 10:12:24 by bkrasnos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,33 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char		*new_string;
-	size_t		len;
-	int			i;
+	char	*s_new;
+	int		len;
+	int		i;
 
-	if (!s)
+	i = 0;
+	if (!s || !f)
 		return (NULL);
 	len = ft_strlen(s);
-	new_string = (char *)malloc(sizeof(char) * len + 1);
-	if (!new_string)
+	s_new = malloc(sizeof(char) * (len + 1));
+	if (!s_new)
 		return (NULL);
-	new_string[len] = '\0';
-	i = -1;
-	while (s[++i])
-		new_string[i] = (*f)(i, s[i]);
-	return (new_string);
+	while (i < len)
+	{
+		s_new[i] = f(i, s[i]);
+		i++;
+	}
+	s_new[i] = '\0';
+	return (s_new);
 }
+
+// int	main(void)
+// {
+// 	char	s[] = "Hello world!";
+// 	char	*mapi;
+
+// 	printf("Initial str is '%s'\n", s);
+// 	mapi = ft_strmapi(s, NULL);
+// 	printf("Mapped str is '%s'\n", mapi);
+// 	return (0);
+// }
