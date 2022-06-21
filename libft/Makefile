@@ -6,7 +6,7 @@
 #    By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/04 11:46:58 by bkrasnos          #+#    #+#              #
-#    Updated: 2022/06/20 09:48:27 by bkrasnos         ###   ########.fr        #
+#    Updated: 2022/06/21 13:56:51 by bkrasnos         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,6 +69,8 @@ SRC =	ft_printf.c\
 		ft_lstclear.c \
 		ft_lstadd_back.c \
 		ft_lstiter.c \
+		get_next_line.c \
+		get_next_line_utils.c \
 
 OBJ = $(SRC:.c=.o)
 

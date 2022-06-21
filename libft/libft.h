@@ -6,7 +6,7 @@
 /*   By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 11:42:13 by bkrasnos          #+#    #+#             */
-/*   Updated: 2022/06/20 09:51:06 by bkrasnos         ###   ########.fr       */
+/*   Updated: 2022/06/21 13:55:54 by bkrasnos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,11 @@
 # include <stddef.h>
 # include <stdarg.h>
 # include <limits.h>
+# include <stdio.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 3
+# endif
 
 typedef struct s_list
 {
@@ -50,7 +55,6 @@ int					ft_strncmp(const char *s1, const char *s2, size_t n);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
-int					get_next_line(int fd, char **line);
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
 size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t				ft_strlen(const char *str);
@@ -85,4 +89,8 @@ void				ft_flag_s(va_list args, int *nb);
 void				ft_flag_u(va_list args, int *nb);
 void				ft_flag_x(va_list args, int *nb);
 void				ft_flag_bx(va_list args, int *nb);
+char				*get_next_line(int fd);
+void				*free_str(char *s);
+char				*ft_strjoin_gnl(char *s1, char *s2);
+char				*ft_substr_gnl(char *s, unsigned int start, size_t len);
 #endif
