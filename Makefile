@@ -6,7 +6,7 @@
 #    By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/27 12:40:35 by bkrasnos          #+#    #+#              #
-#    Updated: 2022/06/20 12:09:31 by bkrasnos         ###   ########.fr        #
+#    Updated: 2022/06/21 14:21:50 by bkrasnos         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ SRCS_B	=	checker/checker.c		\
 			checker/stdin.c		\
 			checker/operations.c	\
 			checker/arguments.c		\
-			checker/utils_checker.c
+			checker/utils_checker.c \
 
 OBJS_B	=	$(SRCS_B:.c=.o)
 
@@ -54,7 +54,7 @@ clean:
 			make -C libft/ clean
 
 fclean:
-			rm -rf $(OBJS) $(OBJS_B) $(NAME) $(NAME_B)
+			rm -f $(OBJS) $(OBJS_B)
 			make -C libft/ fclean
 
 re:			fclean $(NAME)

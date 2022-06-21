@@ -6,11 +6,11 @@
 /*   By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 14:01:03 by bkrasnos          #+#    #+#             */
-/*   Updated: 2022/06/21 14:07:06 by bkrasnos         ###   ########.fr       */
+/*   Updated: 2022/06/21 14:18:58 by bkrasnos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_bonus.h"
+#include "checker.h"
 
 void	push(t_stock **src, t_stock **dst, char *msg)
 {

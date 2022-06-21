@@ -6,7 +6,7 @@
 #    By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/04 11:46:58 by bkrasnos          #+#    #+#              #
-#    Updated: 2022/06/21 13:56:51 by bkrasnos         ###   ########.fr        #
+#    Updated: 2022/06/21 14:20:34 by bkrasnos         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,10 +54,12 @@ SRC =	ft_printf.c\
 		ft_strlcpy.c \
 		ft_strmapi.c \
 		ft_strncmp.c \
+		ft_strcmp.c \
 		ft_strnstr.c \
 		ft_strrchr.c \
 		ft_strtrim.c \
 		ft_substr.c \
+		ft_free_tab.c \
 		ft_tolower.c \
 		ft_toupper.c \
 		ft_lstsize.c \
