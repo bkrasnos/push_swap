@@ -6,19 +6,29 @@
 /*   By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 09:45:57 by bkrasnos          #+#    #+#             */
-/*   Updated: 2022/06/23 11:05:49 by bkrasnos         ###   ########.fr       */
+/*   Updated: 2022/06/23 12:09:46 by bkrasnos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+#include "libft.h"
+
+static void	ft_putnbrr(unsigned int n, int *nb)
+{
+	char			c;
+
+	if (n > 9)
+		ft_putnbrr(n / 10, nb);
+	n %= 10;
+	c = n + '0';
+	*nb = *nb + write(1, &c, 1);
+}
+
 void	ft_flag_u(va_list args, int *nb)
 {
-	char	*str;
+	unsigned int	n;
 
-	str = va_arg(args, char *);
-	if (!str)
-		*nb = *nb + write(1, "(null)", 6);
-	else
-		*nb = *nb + write(1, str, ft_strlen(str));
+	n = va_arg(args, unsigned int);
+	ft_putnbrr(n, nb);
 }

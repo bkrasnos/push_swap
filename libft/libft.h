@@ -6,7 +6,7 @@
 /*   By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 11:42:13 by bkrasnos          #+#    #+#             */
-/*   Updated: 2022/06/23 09:45:28 by bkrasnos         ###   ########.fr       */
+/*   Updated: 2022/06/23 12:29:26 by bkrasnos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stddef.h>
 # include <stdarg.h>
 # include <limits.h>
+# include <stdio.h>
 
 typedef struct s_list
 {
@@ -43,6 +44,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memset(void *b, int c, size_t len);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s1);
+void	*ft_free_tab(char **tab);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlen(const char *s);
@@ -58,6 +60,7 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putstr_fd(char *s, int fd);
+int	ft_strcmp(char *s1, char *s2);
 char	**ft_split(char const *s, char c);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_strjoin(char const *s1, char const *s2);
@@ -85,5 +88,14 @@ void	ft_flag_s(va_list args, int *nb);
 void	ft_flag_u(va_list args, int *nb);
 void	ft_flag_x(va_list args, int *nb);
 void	ft_flag_bx(va_list args, int *nb);
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 3
+# endif
+
+char	*get_next_line(int fd);
+void	*free_str(char *s);
+char	*ft_strjoin_gnl(char *s1, char *s2);
+char	*ft_substr_gnl(char *s, unsigned int start, size_t len);
 
 #endif
