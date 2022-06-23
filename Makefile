@@ -6,57 +6,49 @@
 #    By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/27 12:40:35 by bkrasnos          #+#    #+#              #
-#    Updated: 2022/06/21 14:21:50 by bkrasnos         ###   ########.fr        #
+#    Updated: 2022/06/23 11:03:07 by bkrasnos         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	push_swap
+FLAGS = -Wall -Wextra -Werror
 
-SRCS =	srcs/push_swap.c \
-		srcs/init.c \
-		srcs/utils.c \
-		srcs/init_utils.c \
-		srcs/tools.c \
-		srcs/five.c \
-		srcs/ps.c \
-		srcs/rr.c \
-		srcs/main.c \
+NAME = push_swap
 
-OBJS	=	$(SRCS:.c=.o)
+INCLUDES = -Iincludes -Ilibft/libft.h
 
-NAME_B	=	checker
+LIB = libft/libft.a 
 
-SRCS_B	=	checker/checker.c		\
-			checker/stdin.c		\
-			checker/operations.c	\
-			checker/arguments.c		\
-			checker/utils_checker.c \
+SRC =	push_swap.c \
+		init.c \
+		utils.c \
+		init_utils.c \
+		tools.c \
+		five.c \
+		ps.c \
+		rr.c \
+		main.c
 
-OBJS_B	=	$(SRCS_B:.c=.o)
+OBJ =	$(SRC:.c=.o)
 
+all:	libft $(NAME)
 
-CC		=	gcc
+%.o : %.c
+			gcc $(FLAGS) -c $< $(INCLUDES) -o $@
 
-CFLAGS	=	-Wall -Wextra -Werror
+$(NAME):	${OBJ}
+			gcc $(FLAGS) $(OBJ) $(LIB) $(INCLUDES) -o $(NAME)
 
-all:		$(NAME)
-
-$(NAME):	$(OBJS)
-			make -C libft/
-			$(CC) $(CFLAGS) $(OBJS) -Llibft -lft -o $(NAME)
-
-bonus:		$(OBJS_B)
-			make -C libft/ bonus
-			$(CC) $(CFLAGS) $(OBJS_B) -Llibft -lft -o $(NAME_B)
+libft:
+			make -C ./libft
 
 clean:
-			rm -rf $(OBJS)
-			make -C libft/ clean
+			make -C libft clean
+			rm -f ${OBJ}
 
-fclean:
-			rm -f $(OBJS) $(OBJS_B)
-			make -C libft/ fclean
+fclean:		clean
+			make -C libft fclean
+			rm -f ${NAME}
 
-re:			fclean $(NAME)
+re:			fclean all
 
-.PHONY:		all clean fclean re
+.PHONY: all clean fclean libft re

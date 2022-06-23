@@ -6,7 +6,7 @@
 #    By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/04 11:46:58 by bkrasnos          #+#    #+#              #
-#    Updated: 2022/06/21 14:20:34 by bkrasnos         ###   ########.fr        #
+#    Updated: 2022/06/23 10:55:48 by bkrasnos         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,27 +70,25 @@ SRC =	ft_printf.c\
 		ft_lstmap.c \
 		ft_lstclear.c \
 		ft_lstadd_back.c \
-		ft_lstiter.c \
-		get_next_line.c \
-		get_next_line_utils.c \
+		ft_lstiter.c
 
-OBJ = $(SRC:.c=.o)
+OBJ =	$(SRC:.c=.o)
 
-all: $(NAME)
+%.o : %.c
+			gcc $(FLAGS) -c $< -I $(INCLUDES) -o $@
 
-$(NAME): $(OBJ)
-	ar rc $(NAME) $(OBJ)
-	ranlib $(NAME)
+all:		$(NAME)
 
-%.o: %.c
-	gcc $(FLAGS) -I $(INCLUDES) -c $< -o $@
-
+$(NAME):	$(OBJ)
+			ar rc $(NAME) $(OBJ)
+			# ranlib $(NAME)
+	
 clean:
-	rm -f $(OBJ)
+			rm -f $(OBJ)
 
 fclean: clean
-	rm -f $(NAME)
+			rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all, clean, fclean, re
+.PHONY: all clean fclean re

@@ -6,11 +6,11 @@
 /*   By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 11:46:19 by bkrasnos          #+#    #+#             */
-/*   Updated: 2022/06/20 11:52:26 by bkrasnos         ###   ########.fr       */
+/*   Updated: 2022/06/23 09:16:15 by bkrasnos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "includes/push_swap.h"
 
 void	get_max(t_data *main_data, int	*new_stack)
 {

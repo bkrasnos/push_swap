@@ -6,13 +6,13 @@
 /*   By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 09:45:57 by bkrasnos          #+#    #+#             */
-/*   Updated: 2022/06/20 11:42:36 by bkrasnos         ###   ########.fr       */
+/*   Updated: 2022/06/23 11:05:49 by bkrasnos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_flag_s(va_list args, int *nb)
+void	ft_flag_u(va_list args, int *nb)
 {
 	char	*str;
 

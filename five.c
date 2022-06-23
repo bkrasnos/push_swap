@@ -6,11 +6,11 @@
 /*   By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 11:46:07 by bkrasnos          #+#    #+#             */
-/*   Updated: 2022/06/20 11:51:55 by bkrasnos         ###   ########.fr       */
+/*   Updated: 2022/06/23 09:15:44 by bkrasnos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "includes/push_swap.h"
 
 void	small_five(t_data *main_data)
 {
