@@ -6,11 +6,11 @@
 /*   By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 11:46:10 by bkrasnos          #+#    #+#             */
-/*   Updated: 2022/06/23 09:15:53 by bkrasnos         ###   ########.fr       */
+/*   Updated: 2022/06/24 10:19:27 by bkrasnos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/push_swap.h"
+#include "../includes/push_swap.h"
 
 int	check_two_arg(char *str)
 {
