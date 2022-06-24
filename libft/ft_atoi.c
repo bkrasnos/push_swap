@@ -6,45 +6,65 @@
 /*   By: bkrasnos <bkrasnos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 11:35:08 by bkrasnos          #+#    #+#             */
-/*   Updated: 2022/04/19 09:43:02 by bkrasnos         ###   ########.fr       */
+/*   Updated: 2022/06/24 14:02:53 by bkrasnos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <limits.h>
 #include "libft.h"
 
-static int	ft_size_control(int sign)
+static int	check_atoi(const char *str, int n, int s)
 {
-	if (sign < 0)
+	int				a;
+	unsigned long	l;
+
+	a = 0;
+	l = 0;
+	while (str[n + a] >= '0' && str[n + a] <= '9')
+		a++;
+	if (a > 10 && s == 1)
 		return (0);
-	else
-		return (-1);
+	if (a > 10 && s == -1)
+		return (0);
+	while (str[n] >= '0' && str[n] <= '9')
+	{
+		l *= 10;
+		l += str[n] - '0';
+		n++;
+	}
+	if (l > 2147483647 && s == 1)
+		return (0);
+	if (l > 2147483648 && s == -1)
+		return (0);
+	return (1);
 }
 
 int	ft_atoi(const char *str)
 {
-	int						i;
-	int						sign;
-	unsigned long long		n;
+	int	s;
+	int	n;
+	int	nmbr;
 
-	i = 0;
-	sign = 1;
+	nmbr = 0;
 	n = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == ' ')
-		++i;
-	if (str[i] == '-' || str[i] == '+')
+	s = 1;
+	while (str[n] == ' ' || str[n] == '\t' || str[n] == '\n'
+		|| str[n] == '\r' || str[n] == '\v' || str[n] == '\f')
+		n++;
+	if (str[n] == '+' || str[n] == '-')
 	{
-		sign = 1 - 2 * (str[i] == '-');
-		++i;
+		if (str[n] == '-')
+			s = -s;
+		n++;
 	}
-	while (str[i] >= 48 && str[i] <= 57)
+	if (check_atoi(str, n, s) == 0)
+		return (check_atoi(str, n, s));
+	while (str[n] >= '0' && str[n] <= '9')
 	{
-		n = n * 10 + str[i] - '0';
-		++i;
-		if (n > LLONG_MAX)
-			return (ft_size_control(sign));
+		nmbr *= 10;
+		nmbr += str[n] - '0';
+		n++;
 	}
-	return (sign * n);
+	return (nmbr * s);
 }
 
 // int	main(void)
